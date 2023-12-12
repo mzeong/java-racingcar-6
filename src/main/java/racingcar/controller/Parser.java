@@ -1,6 +1,6 @@
-package racingcar;
+package racingcar.controller;
 
-import static racingcar.ErrorMessage.ATTEMPT_COUNT_IS_NOT_NUMBER;
+import static racingcar.ErrorMessage.COUNT_IS_NOT_NUMBER;
 import static racingcar.ErrorMessage.NAME_IS_EMPTY;
 
 import java.util.Arrays;
@@ -24,7 +24,7 @@ public class Parser {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(ATTEMPT_COUNT_IS_NOT_NUMBER.getMessage());
+            throw new IllegalArgumentException(COUNT_IS_NOT_NUMBER.getMessage());
         }
     }
 }

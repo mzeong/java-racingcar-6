@@ -1,6 +1,6 @@
 package racingcar.domain;
 
-import static racingcar.ErrorMessage.NAME_MAX_LENGTH_EXCEEDED;
+import static racingcar.ErrorMessage.NAME_LENGTH_OUT_OF_RANGE;
 
 public class Name {
     private static final int MAX_LENGTH = 5;
@@ -13,7 +13,7 @@ public class Name {
 
     private void validateMaxLength(String name) {
         if (name.length() > MAX_LENGTH) {
-            throw new IllegalArgumentException(NAME_MAX_LENGTH_EXCEEDED.getMessage());
+            throw new IllegalArgumentException(NAME_LENGTH_OUT_OF_RANGE.getMessage());
         }
     }
 
