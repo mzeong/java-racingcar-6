@@ -1,8 +1,9 @@
 package racingcar;
 
 public enum ErrorMessage {
-    NAME_IS_EMPTY("이름이 공백입니다."),
-    NAME_MAX_LENGTH_EXCEEDED("이름이 최대 길이를 초과했습니다.");
+    NAME_IS_EMPTY("자동차 이름이 없습니다."),
+    NAME_MAX_LENGTH_EXCEEDED("자동차 이름이 최대 길이를 초과했습니다."),
+    ATTEMPT_COUNT_IS_NOT_NUMBER("시도할 횟수가 숫자가 아닙니다.");
 
     private static final String PREFIX = "[ERROR] ";
     private final String message;

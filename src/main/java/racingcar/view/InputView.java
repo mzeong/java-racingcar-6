@@ -1,7 +1,7 @@
 package racingcar.view;
 
+import static racingcar.view.Message.INPUT_ATTEMPT_COUNT;
 import static racingcar.view.Message.INPUT_CAR_NAMES;
-import static racingcar.view.Message.INPUT_NUMBER_OF_ATTEMPTS;
 
 import camp.nextstep.edu.missionutils.Console;
 
@@ -11,8 +11,8 @@ public class InputView {
         return Console.readLine();
     }
 
-    public static String inputNumberOfAttempts() {
-        printMessage(INPUT_NUMBER_OF_ATTEMPTS);
+    public static String inputAttemptCount() {
+        printMessage(INPUT_ATTEMPT_COUNT);
         return Console.readLine();
     }
 

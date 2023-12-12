@@ -1,5 +1,6 @@
 package racingcar;
 
+import static racingcar.ErrorMessage.ATTEMPT_COUNT_IS_NOT_NUMBER;
 import static racingcar.ErrorMessage.NAME_IS_EMPTY;
 
 import java.util.Arrays;
@@ -17,5 +18,13 @@ public class Parser {
             throw new IllegalArgumentException(NAME_IS_EMPTY.getMessage());
         }
         return carNames;
+    }
+
+    public static int parseAttemptCount(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(ATTEMPT_COUNT_IS_NOT_NUMBER.getMessage());
+        }
     }
 }
