@@ -2,26 +2,23 @@ package racingcar.domain;
 
 import racingcar.util.RandomNumberGenerator;
 
-public class Car {
-    private static final String DASH = "-";
-    private static final int START_DISTANCE = 0;
+public class Car implements Comparable<Car> {
     private static final int FORWARD_CONDITION = 4;
-    private static final int FORWARD_DISTANCE = 1;
     private static final String SEPARATOR = " : ";
     private final Name name;
-    private int distance;
+    private final Distance distance;
     private final RandomNumberGenerator randomNumberGenerator;
 
     public Car(Name name, RandomNumberGenerator randomNumberGenerator) {
         this.name = name;
-        this.distance = START_DISTANCE;
+        this.distance = new Distance();
         this.randomNumberGenerator = randomNumberGenerator;
     }
 
     public void moveOnCondition() {
         int randomNumber = randomNumberGenerator.generate();
         if (isForward(randomNumber)) {
-            distance += FORWARD_DISTANCE;
+            distance.increase();
         }
     }
 
@@ -31,6 +28,17 @@ public class Car {
 
     @Override
     public String toString() {
-        return name + SEPARATOR + DASH.repeat(distance);
+        return name + SEPARATOR + distance;
+    }
+
+    public String toNameString() { return name.toString(); }
+
+    @Override
+    public int compareTo(Car o) {
+        return distance.compareTo(o.distance);
+    }
+
+    public boolean isSameDistance(Car o) {
+        return distance.equals(o.distance);
     }
 }
