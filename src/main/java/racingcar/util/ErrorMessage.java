@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.util;
 
 public enum ErrorMessage {
     NAME_IS_EMPTY("자동차 이름이 없습니다."),

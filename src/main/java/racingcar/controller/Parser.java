@@ -1,7 +1,7 @@
 package racingcar.controller;
 
-import static racingcar.ErrorMessage.COUNT_IS_NOT_NUMBER;
-import static racingcar.ErrorMessage.NAME_IS_EMPTY;
+import static racingcar.util.ErrorMessage.COUNT_IS_NOT_NUMBER;
+import static racingcar.util.ErrorMessage.NAME_IS_EMPTY;
 
 import java.util.Arrays;
 import java.util.List;
