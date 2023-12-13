@@ -1,10 +1,11 @@
 package racingcar.domain;
 
-import static racingcar.ErrorMessage.COUNT_OUT_OF_RANGE;
+import static racingcar.util.ErrorMessage.COUNT_OUT_OF_RANGE;
 
 public class Count {
     private static final int MIN_NUMBER = 1;
-    private final int count;
+    private static final int END_COUNT = 0;
+    private int count;
 
     public Count(int count) {
         validateRange(count);
@@ -17,7 +18,11 @@ public class Count {
         }
     }
 
-    public int getCount() {
-        return count;
+    public void decrease() {
+        count--;
+    }
+
+    public boolean isOngoing() {
+        return count > END_COUNT;
     }
 }
